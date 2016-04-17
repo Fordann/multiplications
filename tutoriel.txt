@@ -5,3 +5,4 @@
 - aller avec le navigateur sur : http://localhost:8080/
 - faire ses modifs
 - lancer git GUI (depuis le menu démarrer)
+c'est chaud
