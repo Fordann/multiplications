@@ -10,7 +10,6 @@ app.get('/', function (req, res) {
 });
 
 
-
 io.sockets.on('connection', function (socket, pseudo) {
 
     function genere_calcul() {
