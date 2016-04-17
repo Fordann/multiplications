@@ -1,0 +1,7 @@
+- lancer node depuis le menu ("node js command prompt")
+- taper "cd code"
+- taper "cd multiplications"
+- lancer l'application node : "node app.js"
+- aller avec le navigateur sur : http://localhost:8080/
+- faire ses modifs
+- lancer git GUI (depuis le menu démarrer)
