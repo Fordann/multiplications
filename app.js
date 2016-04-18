@@ -20,6 +20,7 @@ io.sockets.on('connection', function (socket, pseudo) {
         socket.emit('generation', {t1 : table1, t2: table2});        
     };
 
+var score = 0;
 
     socket.on('start', function (socket) {
         genere_calcul();
@@ -31,7 +32,8 @@ io.sockets.on('connection', function (socket, pseudo) {
 
         if (resultat == socket.table1 * socket.table2) {
             socket.emit('reponse', {reponse_msg : "Super, tu es balèze", image : "http://thumbs.dreamstime.com/x/gold-badge-5392868.jpg"});
-        }
+            score ++;
+	   }
         else {
             socket.emit('reponse', {reponse_msg : "Il faut encore progresser", image : "http://comps.canstockphoto.fr/can-stock-photo_csp15595090.jpg"});
         }
