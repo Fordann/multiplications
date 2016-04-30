@@ -16,9 +16,8 @@
                 position: absolute;
             }
 			#zone_score italics {
-                float: right;
-                left: 600px;
-                bottom: 0px;
+                left: 50px;
+                top: 500px;
                 position: absolute;
         </style>
     </head>
@@ -44,13 +43,12 @@
         <section id="zone_photo">
             
         </section>
-		
 		<section id="zone_score">
             
         </section>
 
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
         <script>
 
             // Connexion à socket.io
@@ -65,6 +63,9 @@
             // On recoit la reponse du serveur
             socket.on('reponse', function(data) {
                 afficheReponse(data.reponse_msg, data.image);
+            })
+            socket.on('score', function(data) {
+                afficheScore(data.score);
             })
 
             // Lorsqu'on envoie le formulaire, on transmet le message et on l'affiche sur la page
@@ -82,12 +83,15 @@
                 $('#zone_table').html('<p><strong>' + table1 + '</strong> x <strong>' + table2 + '</strong></p>');
             };
             // Ajoute un message dans la page
-            function afficheReponse(message, image) {
+            function afficheReponse(message, image, score) {
                 $('#zone_message_reponse').html('<p><strong>' + message + '</strong></p>');
                 $('#zone_photo').html('<img src="' + image + '">');
             };
+            function afficheScore(score) {
+				console.log(score);
+				$('#zone_score').html('<H2><strong>score : ' + score + '</strong></H2>');
+            };
         </script>
-		<h2>Score :<h2>
 	</body>
 </html>
 
